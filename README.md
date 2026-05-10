@@ -20,6 +20,14 @@ El objetivo principal fue crear una interfaz visual capaz de:
 
 ---
 
+## VISTA
+
+<img width="1915" height="1077" alt="image" src="https://github.com/user-attachments/assets/345ec7ff-aed3-4c34-8c99-0e946128047f" />
+<img width="1914" height="1077" alt="image" src="https://github.com/user-attachments/assets/6f95a223-0316-4d40-8328-d330e4422d23" />
+<img width="1895" height="1069" alt="image" src="https://github.com/user-attachments/assets/f6fab8dc-9066-4bc2-92f7-aa4c46a88e00" />
+<img width="390" height="850" alt="image" src="https://github.com/user-attachments/assets/37e750cf-1083-4114-a459-c9710e653647" />
+
+
 ## Estructura general del proyecto
 
 La aplicación está organizada de forma simple para separar interfaz, estilos, lógica, configuración y assets.

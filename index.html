@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Dragonbound Avatar Shop</title>
+  <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <div id="preloader" class="loader-overlay">
+    <div class="loader-background-pattern"></div>
+    <div class="loader-content">
+
+      <div class="loader-track">
+        <div id="loader-bar" class="loader-bar"></div>
+        <div id="loader-avatar" class="loader-avatar"></div>
+      </div>
+      <div id="loader-text" class="loader-text">CARGANDO... 0%</div>
+    </div>
+  </div>
+
+  <div id="main-watermark" class="loader-background-pattern" style="opacity: 0;"></div>
+
+
+  <div id="game-container">
+    <header class="game-header">
+      <div class="logo-container">
+        <img src="./img/favicon.ico" alt="Logo" class="logo-icon">
+        <div class="logo">AVATAR<span> SHOP</span></div>
+      </div>
+      <button id="mobileEquippedBtn" class="mobile-equipped-trigger">
+        <span>Equipamiento</span>
+      </button>
+      <nav id="tabs" class="category-tabs"></nav>
+    </header>
+
+    <main class="game-layout">
+      <!-- =================== Left Panel: Preview & Stats =================== -->
+      <section class="panel panel-left">
+        <div class="panel-header">Vista Previa</div>
+        <div class="preview-container">
+          <div id="preview" class="avatar-preview">
+            <div class="loader-background-pattern" style="opacity: 0.15;"></div>
+          </div>
+        </div>
+
+
+        <div class="sub-header">Equipamiento Actual</div>
+        <div class="equipped-section">
+          <ul id="equippedList" class="equipped-list"></ul>
+        </div>
+
+      </section>
+
+      <!-- =================== Right Panel: Shop =================== -->
+      <section class="panel panel-right">
+        <div class="shop-controls">
+          <div class="filter-bar">
+            <div class="pager">
+              <button id="prevPage" class="game-btn-nav">◀</button>
+              <span id="pageInfo" class="page-text">Página 1 de 1</span>
+              <button id="nextPage" class="game-btn-nav">▶</button>
+            </div>
+            <!-- Buscador eliminado -->
+
+            <div class="settings">
+              <label>FPS: <input id="fpsGlobal" type="number" min="1" max="60" value="25"
+                  class="game-input-small"></label>
+              <label class="sound-setting">Efectos:
+                <span class="sound-select-wrap">
+                  <select id="moveSound" class="game-select-small native-modern-select">
+                    <option value="./sounds/click/accept.ogg">Aceptar</option>
+                    <option value="./sounds/click/bigtwinkle.wav">Twinkle</option>
+                    <option value="./sounds/click/stage.wav">Stage</option>
+                    <option value="./sounds/click/purchase.wav">Purchase</option>
+                    <option value="./sounds/click/pause.wav">Pause</option>
+                    <option value="./sounds/click/win.mp3">Win</option>
+                    <option value="">Sin sonido</option>
+                  </select>
+                </span>
+              </label>
+
+              <label class="sound-setting">Música:
+                <span class="sound-select-wrap">
+                  <select id="bgmSelect" class="game-select-small native-modern-select">
+                    <option value="">Silencio</option>
+                    <option value="./sounds/fondo/DragonBound_Lobby_theme.mp3" selected>Lobby Theme</option>
+                    <option value="./sounds/fondo/Lobby_GunBound_OST.mp3">Classic OST</option>
+                  </select>
+                </span>
+              </label>
+
+              <div class="audio-controls">
+                <input type="range" id="bgmVolume" min="0" max="1" step="0.05" value="0.5" class="game-range">
+                <button id="bgmToggle" class="bgm-btn" title="Activar/Desactivar Música">🔊</button>
+              </div>
+
+              <button id="previewConfigBtn" class="config-btn" type="button" aria-label="Configurar posiciones"
+                title="Configurar posiciones">
+                <span aria-hidden="true">⚙</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div id="grid" class="item-grid"></div>
+      </section>
+    </main>
+
+    <dialog id="previewConfigDialog" class="config-dialog">
+      <div class="config-dialog-shell">
+        <div class="config-dialog-header">
+          <div>
+            <div class="config-dialog-title">Configuracion</div>
+            <div class="config-dialog-subtitle">Posicion de capas &bull; Usa las flechas del teclado para mover el ítem
+            </div>
+          </div>
+          <button id="configCloseBtn" class="config-dialog-close" type="button" aria-label="Cerrar">x</button>
+        </div>
+
+        <div class="config-dialog-body">
+          <div class="config-preview-panel">
+            <div id="configPreview" class="avatar-preview config-avatar-preview"></div>
+          </div>
+
+          <div class="config-controls-panel">
+            <label class="config-layer-select-label">Capa
+              <select id="configLayerSelect" class="game-select-small"></select>
+            </label>
+            <div id="configLayerControls" class="config-layer-controls"></div>
+          </div>
+        </div>
+
+        <div class="config-dialog-actions">
+          <button id="configResetBtn" class="config-secondary-btn" type="button">Restaurar</button>
+          <button id="configDownloadBtn" class="config-secondary-btn" type="button">Descargar JSON</button>
+          <button id="configSaveBtn" class="config-primary-btn" type="button">Guardar</button>
+        </div>
+
+      </div>
+    </dialog>
+  </div>
+
+  <dialog id="equippedDialog" class="config-dialog">
+    <div class="config-dialog-shell">
+      <div class="config-dialog-header">
+        <div>
+          <div class="config-dialog-title">Equipamiento Actual</div>
+        </div>
+        <button id="equippedDialogClose" class="config-dialog-close" type="button">x</button>
+      </div>
+      <div class="config-dialog-body" style="grid-template-columns: 1fr;">
+        <div class="equipped-section" style="padding: 0; overflow-y: auto; max-height: 60vh;">
+          <ul id="mobileEquippedList" class="equipped-list"></ul>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <noscript>
+    <p class="noscript-msg">Por favor, activa JavaScript para disfrutar de la experiencia completa.</p>
+  </noscript>
+  <script src="./js/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+{
+  "previewCompositeConfig": {
+    "Background": {
+      "mode": "background",
+      "z": 0
+    },
+    "Flag": {
+      "x": 36,
+      "y": 40,
+      "size": 82,
+      "z": 20
+    },
+    "Body": {
+      "x": 49,
+      "y": 61,
+      "size": 126,
+      "z": 30
+    },
+    "Head": {
+      "x": 50,
+      "y": 39,
+      "size": 94,
+      "z": 40
+    },
+    "Glass": {
+      "x": 42,
+      "y": 37,
+      "size": 118,
+      "z": 50
+    },
+    "Foreground": {
+      "x": 72,
+      "y": 47,
+      "size": 112,
+      "z": 60
+    }
+  },
+  "loaderDurationSeconds": 1.5,
+  "loaderHeadSprite": "./items_capturados/images/Head/mh04506.png"
+}

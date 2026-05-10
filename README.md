@@ -1,31 +1,35 @@
 # Dragonbound Avatar Shop - Renderizado de Items y Animaciones
 
-Este proyecto es una práctica técnica enfocada en recrear una vista tipo **Avatar Shop**, donde los items capturados se cargan dinámicamente, se muestran por categorías, se animan mediante spritesheets y se combinan en una vista previa del avatar usando capas.
+**Link del proyecto desplegado:** [https://benji379.github.io/db_avatar_shop](https://benji379.github.io/db_avatar_shop)
 
-La aplicación está construida con **HTML**, **CSS**, **JavaScript vanilla** y un pequeño servidor en **Express** para servir archivos estáticos y guardar configuraciones locales.
+Este proyecto es una práctica técnica enfocada en recrear una vista tipo **Avatar Shop**, donde los items capturados se cargan dinámicamente, se muestran por categorías, se animan mediante spritesheets y se combinan en una vista previa del avatar usando capas.
 
 ---
 
-## Objetivo del proyecto
+## Ejecución del proyecto
 
-El objetivo principal fue crear una interfaz visual capaz de:
+Para ejecutar este proyecto correctamente debido a la carga dinámica de archivos JSONL y sprites, **necesitas usar un servidor local**. Abrir el archivo `index.html` directamente en el navegador no funcionará por restricciones de seguridad (CORS).
 
-- Cargar items desde archivos `.jsonl`.
-- Renderizar tarjetas de items por categoría.
-- Mostrar miniaturas animadas de cada item.
-- Equipar y quitar items por tipo de capa.
-- Componer un avatar en una sola vista previa.
-- Controlar posiciones, tamaños y orden visual de las capas.
-- Manejar frames y animaciones sin depender de una librería externa.
+**Opciones recomendadas:**
+1. **Live Server (VS Code):** La opción más fácil. Haz clic derecho en `index.html` y selecciona "Open with Live Server".
+2. **Node.js:** Puedes usar el servidor incluido ejecutando `node js/server.js`.
+3. **Python:** Ejecuta `python -m http.server` en la carpeta raíz.
 
 ---
 
 ## VISTA
 
-<img width="1915" height="1077" alt="image" src="https://github.com/user-attachments/assets/345ec7ff-aed3-4c34-8c99-0e946128047f" />
-<img width="1914" height="1077" alt="image" src="https://github.com/user-attachments/assets/6f95a223-0316-4d40-8328-d330e4422d23" />
-<img width="1895" height="1069" alt="image" src="https://github.com/user-attachments/assets/f6fab8dc-9066-4bc2-92f7-aa4c46a88e00" />
-<img width="390" height="850" alt="image" src="https://github.com/user-attachments/assets/37e750cf-1083-4114-a459-c9710e653647" />
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/345ec7ff-aed3-4c34-8c99-0e946128047f" width="800" alt="Vista Principal" />
+  <br><br>
+  <img src="https://github.com/user-attachments/assets/6f95a223-0316-4d40-8328-d330e4422d23" width="800" alt="Categorías de Items" />
+  <br><br>
+  <img src="https://github.com/user-attachments/assets/f6fab8dc-9066-4bc2-92f7-aa4c46a88e00" width="800" alt="Configuración de Posiciones" />
+  <br><br>
+  <img src="https://github.com/user-attachments/assets/37e750cf-1083-4114-a459-c9710e653647" width="300" alt="Vista Móvil" />
+</div>
+
+---
 
 
 ## Estructura general del proyecto

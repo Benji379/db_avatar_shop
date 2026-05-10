@@ -91,6 +91,16 @@ body {
   gap: 20px;
 }
 
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
 .logo-container {
   display: flex;
   align-items: center;
